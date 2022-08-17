@@ -8,30 +8,41 @@ import {
   CardActionArea,
   CardActions,
   Stack,
-  TextField
+  TextField,
+  Select,
+  FormControl,
+  MenuItem,
+  InputLabel,
+  Box
 } from "@mui/material";
-import { useEffect, useRef } from "react";
-import Link from "next/link";
-import Question from "../Components/Question.js"
+import { useState } from 'react'
+// import Box from '@mui/material/Box';
+// import InputLabel from '@mui/material/InputLabel';
+// import MenuItem from '@mui/material/MenuItem';
+// import FormControl from '@mui/material/FormControl';
+// import Select from '@mui/material/Select';
+
+
 
 
 
 export default function Cards() {
+  const [age, setAge] = useState('');
 
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
 
   return (
-    <>
+    <div className="flex flex-row  justify-center gap-10">
       <Card
         className="bg-[#f2e9e4] text-black"
         sx={{ maxWidth: 400 }}
       >
         <CardActionArea>
-          <CardMedia 
-            component="img"
-            image="/2021-profile.jpg"
-            alt="npm package"
-            sx={{ maxHeight: 200 }}
-          />
+<img src='/2021-profile.jpg' alt="profile pic"/>
+
+
           <CardContent>
             <Typography gutterBottom variant="h3" component="h3">
               Carlos Alford
@@ -39,22 +50,37 @@ export default function Cards() {
             <Typography gutterBottom variant="h5" component="h4">
               8
             </Typography>
-            <Button size="small">
-              Expand
-            </Button>
             {/* Question component will need the question and a function to process the question */}
-            <Question />
+
           </CardContent>
         </CardActionArea>
 
-        <CardActions className="text-black">
+        <CardActions className="text-black flex flex-col gap-3">
+        <Box sx={{ minWidth: 120 }}>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Transport</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={age}
+          label="VEHICLE OF TRANSPORT"
+          onChange={handleChange}
+        >
+          <MenuItem value={10}>Car</MenuItem>
+          <MenuItem value={20}>Train</MenuItem>
+          <MenuItem value={30}>Bus</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
+          <TextField id="outlined-basic" label="Travel Time" variant="outlined" />
           <Button size="small">
             Submit
           </Button>
+
         </CardActions>
       </Card>
 
-     
-    </>
+    
+    </div>
   );
 }
