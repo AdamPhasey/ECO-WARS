@@ -22,34 +22,33 @@ export default function Cards() {
     <>
       <Card
         className="bg-[#f2e9e4] text-black"
-        sx={{ maxWidth: 400, maxHeight: 450 }}
+        sx={{ maxWidth: 400 }}
       >
         <CardActionArea>
-          <CardMedia
+          <CardMedia 
             component="img"
-            image="/spacecoinfront.png"
+            image="/2021-profile.jpg"
             alt="npm package"
+            sx={{ maxHeight: 200 }}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              SPACE COIN
+            <Typography gutterBottom variant="h3" component="h3">
+              Carlos Alford
             </Typography>
-            <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+            <Typography gutterBottom variant="h5" component="h4">
+              8
+            </Typography>
+            <Button size="small">
+              Expand
+            </Button>
 
-            
-            <Typography className="text-sm">
-              LOREM IPSUM
-            </Typography>
+            <p>The Question compoent to go in here</p>
           </CardContent>
         </CardActionArea>
-        <CardActions className="text-white">
+
+        <CardActions className="text-black">
           <Button size="small">
-            <Link href={"https://github.com/AdamPhasey/space-coin-front"}>
-              Github
-            </Link>
-          </Button>
-          <Button size="small">
-            <Link href={"https://spacecoin.vercel.app"}>Live</Link>
+            Submit
           </Button>
         </CardActions>
       </Card>
