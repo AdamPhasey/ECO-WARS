@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Question from "../Components/Question.js"
 
 
 
@@ -41,8 +42,8 @@ export default function Cards() {
             <Button size="small">
               Expand
             </Button>
-
-            <p>The Question compoent to go in here</p>
+            {/* Question component will need the question and a function to process the question */}
+            <Question />
           </CardContent>
         </CardActionArea>
 
