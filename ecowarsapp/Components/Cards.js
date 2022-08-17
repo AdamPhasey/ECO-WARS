@@ -26,7 +26,7 @@ import { useState } from 'react'
 
 
 
-export default function Cards() {
+export default function Cards({name, image}) {
   const [age, setAge] = useState('');
 
   const handleChange = (event) => {
@@ -40,12 +40,12 @@ export default function Cards() {
         sx={{ maxWidth: 400 }}
       >
         <CardActionArea>
-<img src='/2021-profile.jpg' alt="profile pic"/>
+<img src={image} alt="profile pic"/>
 
 
           <CardContent>
             <Typography gutterBottom variant="h3" component="h3">
-              Carlos Alford
+              {name}
             </Typography>
             <Typography gutterBottom variant="h5" component="h4">
               8
